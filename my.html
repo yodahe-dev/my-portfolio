@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodahe Melese | Full-Stack Software Engineer & System Architect</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#080c14',
+                        cardBg: '#0f172a',
+                        cardBorder: '#1e293b',
+                        brandBlue: '#3b82f6',
+                        brandPurple: '#8b5cf6',
+                        brandCyan: '#06b6d4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+            color: #f3f4f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 60px -15px rgba(59, 130, 246, 0.15);
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 35px -8px rgba(59, 130, 246, 0.25);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#080c14]/85 backdrop-blur-md border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                    YM
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight text-white block">Yodahe Melese</span>
+                    <span class="text-xs text-blue-400 font-medium">Full-Stack Architect</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="https://github.com/yodahe-dev" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-github"></i> GitHub</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="mailto:yodijone@gmail.com" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/25 flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-gray-300 hover:text-blue-400 py-1">About</a>
+            <a href="#skills" class="block text-gray-300 hover:text-blue-400 py-1">Skills</a>
+            <a href="#experience" class="block text-gray-300 hover:text-blue-400 py-1">Experience</a>
+            <a href="#projects" class="block text-gray-300 hover:text-blue-400 py-1">Projects</a>
+            <a href="https://github.com/yodahe-dev" target="_blank" class="block text-gray-300 hover:text-blue-400 py-1">GitHub Profile</a>
+            <div class="pt-2">
+                <a href="mailto:yodijone@gmail.com" class="w-full text-center block py-2.5 rounded-xl bg-blue-600 text-white font-medium text-sm">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-44 md:pb-32 px-6 relative overflow-hidden">
+        <!-- Background Glow Blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-purple-600/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    Available for Full-Stack Roles & Remote Consulting (2026)
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+                    Hi, I'm <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">Yodahe Melese</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Full-Stack Software Engineer & System Architect. I build high-performance web applications, transform slow legacy systems into blazing-fast futuristic platforms, and craft immaculate UI/UX that non-devs love and engineering teams respect.
+                </p>
+
+                <!-- Value Proposition Badges -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="p-4 rounded-xl bg-cardBg border border-cardBorder text-left">
+                        <div class="text-blue-400 font-semibold text-sm mb-1"><i class="fa-solid fa-rocket mr-2"></i>Proven Track Record</div>
+                        <p class="text-xs text-gray-400">15+ successful client projects delivered in production, plus remote engineering excellence through 2026.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-cardBg border border-cardBorder text-left">
+                        <div class="text-cyan-400 font-semibold text-sm mb-1"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>System Optimization</div>
+                        <p class="text-xs text-gray-400">Master at diagnosing complex performance bottlenecks and revamping slow platforms into lightning-fast systems.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#projects" class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                        Explore Live Projects <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="https://github.com/yodahe-dev" target="_blank" class="px-7 py-3.5 rounded-xl bg-cardBg hover:bg-gray-800 text-gray-200 border border-gray-700 font-semibold text-sm transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-github text-xs"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Card / Quick Profile Stats -->
+            <div class="lg:col-span-5">
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-cardBg to-[#0b1120] border border-gray-800 glow-effect relative">
+                    <div class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> Cybersecurity & Full-Stack
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        At a Glance
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center justify-between pb-3 border-b border-gray-800">
+                            <span class="text-gray-400">Primary Language</span>
+                            <span class="font-semibold text-white">TypeScript (Favorite)</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-gray-800">
+                            <span class="text-gray-400">Stack Expertise</span>
+                            <span class="font-semibold text-white">Node.js, Python (FastAPI), React, Next.js</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-gray-800">
+                            <span class="text-gray-400">Databases</span>
+                            <span class="font-semibold text-white">PostgreSQL, MySQL, MongoDB</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-400">Production Experience</span>
+                            <span class="font-semibold text-emerald-400">15+ Clients & Axum SEC</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span>📧 yodijone@gmail.com</span>
+                        <div class="flex gap-3 text-base">
+                            <a href="mailto:yodijone@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="https://github.com/yodahe-dev" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-[#060911]/60 border-y border-gray-800/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest block mb-2">Technical Arsenal</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Technologies & Capabilities</h2>
+                <p class="text-gray-400 text-sm mt-3">From rock-solid backend microservices to intuitive, non-dev friendly UI/UX design.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-cardBorder glow-card transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Languages & UI/UX</h3>
+                    <p class="text-xs text-gray-400 mb-4">Specializing in TypeScript with mastery in frontend frameworks and high-end visual design.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">TypeScript (Fav)</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">JavaScript</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">React / Next.js</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Tailwind CSS</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">UI/UX Design</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-cardBorder glow-card transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Backend & Microservices</h3>
+                    <p class="text-xs text-gray-400 mb-4">Designing scalable distributed systems, secure RESTful APIs, and high-concurrency architecture.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Node.js</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Python (FastAPI)</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Microservices</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-cardBorder glow-card transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Database Architecture</h3>
+                    <p class="text-xs text-gray-400 mb-4">Structuring complex data models for maximum speed, security, and analytical reporting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">PostgreSQL (Fav)</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">MySQL</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">MongoDB</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Data Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-cardBorder glow-card transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Optimization & Production</h3>
+                    <p class="text-xs text-gray-400 mb-4">Expert at diagnosing laggy systems, boosting performance, and managing production servers.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">System Performance</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Server Management</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Production Debugging</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-gray-900 text-gray-200 text-xs font-medium">Git / CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest block mb-2">Career Journey & Track Record</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Professional Experience</h2>
+                <p class="text-gray-400 text-sm mt-3">From cybersecurity infrastructure transformations to delivering 15+ custom client production systems.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Experience Item 1: Axum SEC -->
+                <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder relative">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold mb-2 inline-block">Full-Stack & Cybersecurity Dev</span>
+                            <h3 class="text-2xl font-bold text-white">Axum SEC</h3>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-400 bg-gray-900/60 px-4 py-2 rounded-xl border border-gray-800">
+                            <i class="fa-regular fa-calendar text-blue-400"></i> 2025
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <div class="p-4 rounded-xl bg-[#060911] border border-gray-800">
+                            <span class="text-amber-400 font-semibold block mb-1">🚨 The Challenge:</span>
+                            <p class="text-gray-400">Inherited a severely slow legacy system in a demanding cybersecurity environment, leading to user friction and sluggish platform response.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#060911] border border-gray-800">
+                            <span class="text-blue-400 font-semibold block mb-1">⚡ The Transformation:</span>
+                            <p class="text-gray-400">Diagnosed and eliminated deep performance bottlenecks. Rebuilt backend processing pipelines and designed their modern landing page to showcase top-tier UI/UX capability, transforming the platform into a blazing-fast, futuristic system.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#060911] border border-gray-800">
+                            <span class="text-emerald-400 font-semibold block mb-1">🌟 The Outcome:</span>
+                            <p class="text-gray-400">Users and hiring teams love the transformation. The platform now operates with lightning speed and premium visual appeal.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-gray-800 flex flex-wrap gap-2 items-center justify-between">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs border border-gray-800">TypeScript</span>
+                            <span class="px-3 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs border border-gray-800">System Architecture</span>
+                            <span class="px-3 py-1 rounded-lg bg-gray-900 text-gray-300 text-xs border border-gray-800">UI/UX Landing Page</span>
+                        </div>
+                        <a href="https://www.axumsec.com/" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 text-xs font-semibold flex items-center gap-2 transition-all">
+                            Visit Axum SEC <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2: Independent Consultant (15+ Clients & 2026 Remote) -->
+                <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder relative">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold mb-2 inline-block">Full-Stack Consultant & Remote Engineer</span>
+                            <h3 class="text-2xl font-bold text-white">Independent & Remote Client Work</h3>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-400 bg-gray-900/60 px-4 py-2 rounded-xl border border-gray-800">
+                            <i class="fa-regular fa-calendar text-purple-400"></i> Ongoing through 2026
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-300 mb-6">
+                        Successfully delivered end-to-end full-stack applications for over <strong class="text-white">15+ clients in production</strong>. Currently partnering remotely with global clients through 2026 to design robust database architectures, custom ERP systems, fintech platforms, and scalable microservices.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-[#060911] border border-gray-800">
+                            <h4 class="font-bold text-white text-sm mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-server text-purple-400"></i> Own Server Infrastructure
+                            </h4>
+                            <p class="text-xs text-gray-400">Managed and deployed dedicated server environments ensuring robust uptime and security for production workloads.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#060911] border border-gray-800">
+                            <h4 class="font-bold text-white text-sm mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Fyda Academy
+                            </h4>
+                            <p class="text-xs text-gray-400">Engineered clean, accessible, and intuitive frontend student experiences that simplified complex educational workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Live Links -->
+    <section id="projects" class="py-20 px-6 bg-[#060911]/60 border-y border-gray-800/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest block mb-2">Featured Live Works & Products</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Portfolio & Production Systems</h2>
+                <p class="text-gray-400 text-sm mt-3">Explore live demos showcasing my UI/UX execution alongside complex backend architectures.</p>
+            </div>
+
+            <!-- Live Demos Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Live Project 1: Axum SEC -->
+                <div class="p-6 rounded-3xl bg-cardBg border border-cardBorder glow-card flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold">Cybersecurity Platform</span>
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Axum SEC</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                            Full-stack performance transformation of a cybersecurity platform. Rebuilt a slow legacy system into a blazing-fast, futuristic platform and designed their landing page to showcase high-end UI/UX skills.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://www.axumsec.com/" target="_blank" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
+                            Visit Live Website <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Project 2: WeChewGoods -->
+                <div class="p-6 rounded-3xl bg-cardBg border border-cardBorder glow-card flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold">Interactive UI/UX Demo</span>
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">WeChewGoods</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                            Live interactive web application showcasing high-end UI/UX design, smooth component interactions, and responsive layouts tailored for modern consumer experiences.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://wechewgoods.vercel.app/" target="_blank" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-600/20">
+                            Explore WeChewGoods Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Project 3: AleTube -->
+                <div class="p-6 rounded-3xl bg-cardBg border border-cardBorder glow-card flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold">Frontend Application</span>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AleTube</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                            Live media streaming frontend project showcasing advanced UI engineering, state handling, and seamless layout organization built with modern web technologies.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://aletube.vercel.app/" target="_blank" class="w-full py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20">
+                            Explore AleTube Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Client Solution Systems -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Solution 1: Beverage ERP -->
+                <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder glow-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold">Enterprise Software</span>
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                <i class="fa-solid fa-wine-bottle"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Complex Beverage ERP System</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                            Architected and built an enterprise ERP system specifically for wholesale beverage distribution. Replaced chaotic manual processes with a streamlined, ultra-simple operational dashboard that makes inventory tracking and order management effortless.
+                        </p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 text-xs text-blue-300">
+                        <span class="font-bold">Business Value:</span> Cut manual overhead by 70% and gave non-tech staff an effortless daily workflow.
+                    </div>
+                </div>
+
+                <!-- Solution 2: Forex Trading Journal & Fintech -->
+                <div class="p-8 rounded-3xl bg-cardBg border border-cardBorder glow-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">Fintech SaaS</span>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Forex Trading Journal & Financial Analysis Maker</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                            Engineered a specialized fintech platform for forex traders to log positions, calculate risk-to-reward metrics, and generate deep financial analytics with a clean, distraction-free UI.
+                        </p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/10 text-xs text-emerald-300">
+                        <span class="font-bold">Business Value:</span> Empowers traders with automated analytics to systematically track profitability.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="p-10 sm:p-14 rounded-3xl bg-gradient-to-b from-cardBg to-[#080c14] border border-gray-800 glow-effect relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-blue-600/20 blur-[100px] rounded-full pointer-events-none"></div>
+                <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-purple-600/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+                <span class="text-blue-400 font-semibold text-xs uppercase tracking-widest block mb-3">Let's Build Something Exceptional</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">Ready to Hire or Collaborate?</h2>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                    Whether you are a hiring team looking for an elite full-stack engineer, or seeking remote expertise for 2026, my inbox is open.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="mailto:yodijone@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-envelope"></i> yodijone@gmail.com
+                    </a>
+                    <a href="https://github.com/yodahe-dev" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-cardBg hover:bg-gray-800 text-gray-200 border border-gray-700 font-bold text-sm transition-all flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-github"></i> Visit GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800/60 bg-[#060911]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                    YM
+                </div>
+                <span class="text-sm font-bold text-white">Yodahe Melese</span>
+            </div>
+            
+            <p class="text-xs text-gray-500">
+                © 2026 Yodahe Melese. Full-Stack Engineer & System Architect.
+            </p>
+
+            <div class="flex items-center gap-4 text-gray-400 text-sm">
+                <a href="mailto:yodijone@gmail.com" class="hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/yodahe-dev" target="_blank" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+```
+@@eof
